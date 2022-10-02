@@ -1,7 +1,8 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QBoxLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QBoxLayout, QLineEdit
 from instr import *
 from secondWindow import *
+
 
 class MainWindow(QWidget):
     def __init__(self):
@@ -31,7 +32,7 @@ class MainWindow(QWidget):
     def connects(self):
         self.btn_next.clicked.connect(self.nextWindow)
 
-    def nextWindow(self):
+    def nextWindow(self):  
         self.hide()
         self.sec_win = SecondWindow()
 
