@@ -118,5 +118,5 @@ class SecondWindow(QWidget):
             self.timer.stop()
 
     def next_Window(self):
-        self.hide
+        self.hide()
         self.win_3 = ThirdWindow()
