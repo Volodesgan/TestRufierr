@@ -4,6 +4,13 @@ from instr import *
 from PyQt5.QtGui import QFont
 from thirdWindow import *
 
+class Experement():
+    def __init__(self, age, test1, test2, test3):
+        self.age = int(age)
+        self.test1 = int(test1)
+        self.test2 = int(test2)
+        self.test3 = int(test3)
+
 class SecondWindow(QWidget):
     def __init__(self):
         super().__init__()
@@ -68,7 +75,6 @@ class SecondWindow(QWidget):
         self.btn_test1.clicked.connect(self.timerl)
         self.btn_test2.clicked.connect(self.timer2)
         self.btn_test3.clicked.connect(self.timer3)
-        
 
     def timerl(self):
         self.time = QTime(0, 0, 15)
@@ -119,4 +125,5 @@ class SecondWindow(QWidget):
 
     def next_Window(self):
         self.hide()
-        self.win_3 = ThirdWindow()
+        self.exp = Experement(self.le_age.text(), self.le_test1.text(), self.le_test2.text(), self.le_test3.text())
+        self.win_3 = ThirdWindow(self.exp)
